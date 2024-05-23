@@ -6,3 +6,6 @@ export './LoginWidget/LoginBtn/Login_btn_widget.dart';
 export './HomeWidget/HomeBestDeastinationWidget.dart';
 export './HomeWidget/HomeTitleWidget.dart';
 export './HomeWidget/HomeAppBarWidget.dart';
+
+export './HomeWidget/HomeSubtitleBarWidget.dart';
+export './HomeWidget/HomeCategoriesWidget.dart';

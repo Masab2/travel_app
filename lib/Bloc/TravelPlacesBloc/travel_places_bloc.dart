@@ -10,6 +10,7 @@ class TravelPlacesBloc extends Bloc<TravelPlacesEvent, TravelPlacesState> {
   TravelPlacesBloc({required this.travelPlacesRepo})
       : super(TravelPlacesInitial()) {
     on<TravePlacesLoadedEvent>(_onTravelPlacesGet);
+    on<TravelPlacesCategorySelectedEvent>(_onCategorySelected);
   }
 
   void _onTravelPlacesGet(
@@ -25,5 +26,10 @@ class TravelPlacesBloc extends Bloc<TravelPlacesEvent, TravelPlacesState> {
     } catch (e) {
       emit(TravelPlacesError(message: e.toString()));
     }
+  }
+
+  void _onCategorySelected(TravelPlacesCategorySelectedEvent event,
+      Emitter<TravelPlacesState> emit) {    
+    emit(TravelPlacesCategorySelectedState(event.category));
   }
 }

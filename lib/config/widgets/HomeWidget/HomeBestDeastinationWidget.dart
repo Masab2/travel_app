@@ -8,17 +8,15 @@ class HomeBestDeastinationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: context.mh * 0.2,
-      width: context.mw,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: state.data.data?.length,
-        itemBuilder: (context, index) {
-          var placesdata = state.data.data?[index];
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: context.mw * 0.03),
-            child: Container(
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: state.data.data?.length,
+      itemBuilder: (context, index) {
+        var placesdata = state.data.data?[index];
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.mw * 0.03),
+          child: Container(
+            child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -27,7 +25,7 @@ class HomeBestDeastinationWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.0),
                     child: Image.network(
                       height: context.mw * 0.9,
-                      width: context.mw * 0.7,
+                      width: context.mw * 0.6,
                       AppUrl.buildUrlImage(placesdata?.image ?? ''),
                       fit: BoxFit.cover,
                     ),
@@ -58,9 +56,9 @@ class HomeBestDeastinationWidget extends StatelessWidget {
                 ],
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }
