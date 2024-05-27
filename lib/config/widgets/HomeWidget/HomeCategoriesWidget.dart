@@ -36,7 +36,6 @@ class HomeCategoriesWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                opacity: 0.9,
                 image: AssetImage(
                   categoryIconList?[index] ?? '',
                 ),

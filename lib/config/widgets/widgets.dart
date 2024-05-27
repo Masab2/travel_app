@@ -9,3 +9,8 @@ export './HomeWidget/HomeAppBarWidget.dart';
 
 export './HomeWidget/HomeSubtitleBarWidget.dart';
 export './HomeWidget/HomeCategoriesWidget.dart';
+
+export './TravelDetailsWidget/travel_country_price_widget.dart';
+export './TravelDetailsWidget/travel_title_widget.dart';
+export './TravelDetailsWidget/travel_description_widget.dart';
+export './TravelDetailsWidget/travel_image_widget.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/Model/PlacesModel/places_model.dart';
 import 'package:travel_app/config/routes/routesnames.dart';
 import 'package:travel_app/views/view.dart';
 
@@ -27,6 +28,12 @@ class Routes {
       case RoutesNames.onBoardScreen:
         return MaterialPageRoute(
           builder: (_) => const OnBoardScreen(),
+        );
+      case RoutesNames.travelDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => TravelDetailsView(
+            model: args as PlacesDataList,
+          ),
         );
       default:
         return MaterialPageRoute(

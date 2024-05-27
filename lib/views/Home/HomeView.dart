@@ -50,7 +50,9 @@ class _HomeViewState extends State<HomeView> {
                     );
                   } else if (state is TravelPlacesError) {
                     return ErrorWidgetComp(
-                        onPress: () {}, errorText: state.message.toString());
+                      onPress: () {},
+                      errorText: state.message.toString(),
+                    );
                   } else {
                     return const Text("errror");
                   }
@@ -61,7 +63,7 @@ class _HomeViewState extends State<HomeView> {
               title: 'Popular Places',
               view: 'View All',
             ),
-            0.02.ph(context),
+            0.01.ph(context),
             HomeCategoriesWidget(),
           ],
         ),
