@@ -33,7 +33,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                   fit: BoxFit.cover,
                 ),
               ),
-              Container(
+              SizedBox(
                 height: context.mh,
                 width: context.mw,
               ),
@@ -73,11 +73,8 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                             curve: Curves.easeInOut,
                           );
                         } else {
-                          Navigator.pushNamedAndRemoveUntil(
-                            context,
-                            RoutesNames.loginScreen,
-                            (route) => false,
-                          );
+                          Navigator.pushReplacementNamed(
+                              context, RoutesNames.homeScreen);
                         }
                       },
                     ),

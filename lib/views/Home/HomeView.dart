@@ -8,8 +8,9 @@ import 'package:travel_app/config/extenshion.dart';
 import '../../config/widgets/widgets.dart';
 
 class HomeView extends StatefulWidget {
-  final String name;
-  const HomeView({super.key, required this.name});
+  const HomeView({
+    super.key,
+  });
 
   @override
   State<HomeView> createState() => _HomeViewState();

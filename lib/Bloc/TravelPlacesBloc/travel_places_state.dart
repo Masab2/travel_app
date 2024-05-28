@@ -27,13 +27,3 @@ class TravelPlacesError extends TravelPlacesState {
   @override
   List<Object?> get props => [message];
 }
-
-// category selected State
-class TravelPlacesCategorySelectedState extends TravelPlacesState {
-  final String selectedCategory;
-
-  const TravelPlacesCategorySelectedState(this.selectedCategory);
-
-  @override
-  List<Object> get props => [selectedCategory];
-}

@@ -21,7 +21,7 @@ class LoginBtnWidget extends StatelessWidget {
           Utils.displaySnackBarSuccess(context, state.message);
           Navigator.pushNamedAndRemoveUntil(
             context,
-            RoutesNames.homeScreen,
+            RoutesNames.onBoardScreen,
             (route) => false,
             arguments: state.name,
           );

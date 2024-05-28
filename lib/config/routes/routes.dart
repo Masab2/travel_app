@@ -21,9 +21,7 @@ class Routes {
         );
       case RoutesNames.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => HomeView(
-            name: args as String,
-          ),
+          builder: (_) => const HomeView(),
         );
       case RoutesNames.onBoardScreen:
         return MaterialPageRoute(

@@ -13,6 +13,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
           ? null
           : UserDataList.fromJson(json['data'] as Map<String, dynamic>),
       message: json['Success'] as String?,
+      token: json['token'] as String?,
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
@@ -20,6 +21,7 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'Status': instance.status,
       'data': instance.data,
       'Success': instance.message,
+      'token': instance.token,
     };
 
 _$UserDataListImpl _$$UserDataListImplFromJson(Map<String, dynamic> json) =>

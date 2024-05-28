@@ -26,6 +26,8 @@ mixin _$UserModel {
   UserDataList? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'Success')
   String? get message => throw _privateConstructorUsedError;
+  @JsonKey(name: 'token')
+  String? get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +43,8 @@ abstract class $UserModelCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'Status') bool? status,
       @JsonKey(name: 'data') UserDataList? data,
-      @JsonKey(name: 'Success') String? message});
+      @JsonKey(name: 'Success') String? message,
+      @JsonKey(name: 'token') String? token});
 
   $UserDataListCopyWith<$Res>? get data;
 }
@@ -62,6 +65,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? status = freezed,
     Object? data = freezed,
     Object? message = freezed,
+    Object? token = freezed,
   }) {
     return _then(_value.copyWith(
       status: freezed == status
@@ -75,6 +79,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -103,7 +111,8 @@ abstract class _$$UserModelImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'Status') bool? status,
       @JsonKey(name: 'data') UserDataList? data,
-      @JsonKey(name: 'Success') String? message});
+      @JsonKey(name: 'Success') String? message,
+      @JsonKey(name: 'token') String? token});
 
   @override
   $UserDataListCopyWith<$Res>? get data;
@@ -123,6 +132,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? status = freezed,
     Object? data = freezed,
     Object? message = freezed,
+    Object? token = freezed,
   }) {
     return _then(_$UserModelImpl(
       status: freezed == status
@@ -137,6 +147,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -147,7 +161,8 @@ class _$UserModelImpl implements _UserModel {
   _$UserModelImpl(
       {@JsonKey(name: 'Status') this.status,
       @JsonKey(name: 'data') this.data,
-      @JsonKey(name: 'Success') this.message});
+      @JsonKey(name: 'Success') this.message,
+      @JsonKey(name: 'token') this.token});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
@@ -161,10 +176,13 @@ class _$UserModelImpl implements _UserModel {
   @override
   @JsonKey(name: 'Success')
   final String? message;
+  @override
+  @JsonKey(name: 'token')
+  final String? token;
 
   @override
   String toString() {
-    return 'UserModel(status: $status, data: $data, message: $message)';
+    return 'UserModel(status: $status, data: $data, message: $message, token: $token)';
   }
 
   @override
@@ -174,12 +192,13 @@ class _$UserModelImpl implements _UserModel {
             other is _$UserModelImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.data, data) || other.data == data) &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, status, data, message);
+  int get hashCode => Object.hash(runtimeType, status, data, message, token);
 
   @JsonKey(ignore: true)
   @override
@@ -199,7 +218,8 @@ abstract class _UserModel implements UserModel {
   factory _UserModel(
       {@JsonKey(name: 'Status') final bool? status,
       @JsonKey(name: 'data') final UserDataList? data,
-      @JsonKey(name: 'Success') final String? message}) = _$UserModelImpl;
+      @JsonKey(name: 'Success') final String? message,
+      @JsonKey(name: 'token') final String? token}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
@@ -213,6 +233,9 @@ abstract class _UserModel implements UserModel {
   @override
   @JsonKey(name: 'Success')
   String? get message;
+  @override
+  @JsonKey(name: 'token')
+  String? get token;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>

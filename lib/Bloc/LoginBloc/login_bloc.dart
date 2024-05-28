@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:travel_app/Repository/Auth/loginRepo.dart';
 import 'package:travel_app/data/Response/status.dart';
+import 'package:travel_app/services/SessionManager/sessaion_controller.dart';
 
 part 'login_event.dart';
 part 'login_states.dart';
@@ -39,6 +40,9 @@ class LoginBloc extends Bloc<LoginEvents, LoginState> {
       final value = await loginRepo.loginApi(data);
       if (value.status == true) {
         log('Login successful');
+        await SessionController().saveUserInPrefrences(value);
+        await SessionController().getUserFromPrefrences();
+
         emit(state.copyWith(
           status: Status.completed,
           message: value.message,
