@@ -33,6 +33,10 @@ class Routes {
             model: args as PlacesDataList,
           ),
         );
+      case RoutesNames.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ProfileView(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) {

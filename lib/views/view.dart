@@ -4,3 +4,4 @@ export './Auth/register/registerView.dart';
 export './Home/HomeView.dart';
 export './onBoard/onBoardScreen.dart';
 export './TravelDetails/TravelDetails.dart';
+export './Profile/ProfileView.dart';

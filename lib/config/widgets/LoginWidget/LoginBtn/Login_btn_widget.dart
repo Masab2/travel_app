@@ -23,7 +23,7 @@ class LoginBtnWidget extends StatelessWidget {
             context,
             RoutesNames.onBoardScreen,
             (route) => false,
-            arguments: state.name,
+            arguments: state,
           );
         }
         if (state.status == Status.error) {

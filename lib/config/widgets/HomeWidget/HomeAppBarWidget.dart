@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/config/Assets/imageAsset.dart';
 import 'package:travel_app/config/Color/AppColor.dart';
 import 'package:travel_app/config/extenshion.dart';
+import 'package:iconly/iconly.dart';
+import 'package:travel_app/config/routes/routesnames.dart';
 
 class HomeAppbar {
   static PreferredSizeWidget homeAppBar(BuildContext context) {
@@ -32,6 +34,21 @@ class HomeAppbar {
         ),
       ),
       centerTitle: true,
+      actions: [
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, RoutesNames.profileScreen);
+          },
+          child: Container(
+              padding: EdgeInsets.all(context.mw * 0.007),
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColor.blackColor),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(IconlyBold.profile)),
+        ),
+        0.02.pw(context),
+      ],
     );
   }
 }

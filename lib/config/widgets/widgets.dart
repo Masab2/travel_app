@@ -14,3 +14,5 @@ export './TravelDetailsWidget/travel_country_price_widget.dart';
 export './TravelDetailsWidget/travel_title_widget.dart';
 export './TravelDetailsWidget/travel_description_widget.dart';
 export './TravelDetailsWidget/travel_image_widget.dart';
+
+export './ProfileWidget/profile_widget_listTile.dart';
