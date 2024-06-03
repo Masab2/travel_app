@@ -16,3 +16,5 @@ export './TravelDetailsWidget/travel_description_widget.dart';
 export './TravelDetailsWidget/travel_image_widget.dart';
 
 export './ProfileWidget/profile_widget_listTile.dart';
+export './ProfileWidget/profile_widget_state_completed.dart';
+export './ProfileWidget/profile_widget_main_icon.dart';

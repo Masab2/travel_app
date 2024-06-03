@@ -24,6 +24,7 @@ class SessionController {
   Future<void> saveUserInPrefrences(dynamic user) async {
     await localStorage.setValue('isLogin', 'true');
     await localStorage.setValue('token', jsonEncode(user));
+    log(userModel.data?.id.toString() ?? "");
     await localStorage.setValue('id', userModel.data?.id.toString() ?? "");
   }
 
@@ -35,7 +36,7 @@ class SessionController {
       if (data != null) {
         SessionController().userModel = UserModel.fromJson(jsonDecode(data));
       }
-
+      log(data);
       SessionController().isLogin = isLogin == "true" ? true : false;
     } catch (e) {
       log(e.toString());
@@ -47,6 +48,7 @@ class SessionController {
     try {
       await localStorage.clearValue('isLogin');
       await localStorage.clearValue('token');
+      await localStorage.clearValue('id');
       SessionController().isLogin = false;
       SessionController().userModel = UserModel(); // Reset userModel
       log('User logged out successfully');

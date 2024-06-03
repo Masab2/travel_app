@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/Bloc/ProfileBloc/profile_bloc.dart';
 import 'package:travel_app/Bloc/TravelPlacesBloc/travel_places_bloc.dart';
 import 'package:travel_app/Repository/Auth/loginRepo.dart';
 import 'package:travel_app/Repository/Auth/login_http_repo.dart';
+import 'package:travel_app/Repository/ProfileRepo/profile_http_repo.dart';
+import 'package:travel_app/Repository/ProfileRepo/profile_repo.dart';
 import 'package:travel_app/Repository/TravelPlaces/travel_places_http_repo.dart';
 import 'package:travel_app/Repository/TravelPlaces/travel_places_repo.dart';
 import 'package:travel_app/config/extenshion.dart';
@@ -29,6 +32,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => TravelPlacesBloc(
             travelPlacesRepo: getIt(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => ProfileBloc(
+            profileRepo: getIt(),
           ),
         )
       ],
@@ -82,4 +90,5 @@ class MyApp extends StatelessWidget {
 void serviceLoacator() {
   getIt.registerLazySingleton<LoginRepo>(() => LoginHttpRepo());
   getIt.registerLazySingleton<TravelPlacesRepo>(() => TravelPlacesHttpRepo());
+  getIt.registerLazySingleton<ProfileRepo>(() => ProfileHttpRepo());
 }

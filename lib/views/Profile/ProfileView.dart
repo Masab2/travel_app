@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
-import 'package:travel_app/config/Color/AppColor.dart';
+import 'package:travel_app/Bloc/ProfileBloc/profile_bloc.dart';
+import 'package:travel_app/config/components/Error/ErrorWidget.dart';
+import 'package:travel_app/config/components/loadingWidget/loadingWidget.dart';
 import 'package:travel_app/config/extenshion.dart';
 import 'package:travel_app/config/routes/routesnames.dart';
 import 'package:travel_app/config/widgets/widgets.dart';
@@ -15,6 +18,12 @@ class ProfileView extends StatefulWidget {
 
 class _ProfileViewState extends State<ProfileView> {
   @override
+  void initState() {
+    context.read<ProfileBloc>().add(ProfileLoadedEvent());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -27,29 +36,29 @@ class _ProfileViewState extends State<ProfileView> {
       body: Column(
         children: [
           0.02.ph(context),
-          Align(
-            alignment: Alignment.topCenter,
-            child: Container(
-              padding: EdgeInsets.all(context.mh * 0.02),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: AppColor.primaryColor, width: 2.0),
-              ),
-              child: Icon(
-                IconlyBold.profile,
-                color: AppColor.primaryColor,
-                size: context.mh * 0.130,
-              ),
-            ),
-          ),
+          const ProfileWidgetmainIcon(),
           0.02.ph(context),
-          const ProfileWidgetListTile(
-            icon: IconlyBold.profile,
-            title: "title",
-            subtitle: "subtitle",
+          BlocBuilder<ProfileBloc, ProfileState>(
+            builder: (context, state) {
+              if (state is ProfileLoadingState) {
+                return const LoadingWidget();
+              } else if (state is ProfileCompletedState) {
+                return ProfileWidgetStateCompleted(state: state);
+              } else if (state is ProfileErrorState) {
+                return ErrorWidgetComp(
+                  errorText: state.message,
+                  onPress: () {},
+                );
+              } else {
+                return const SizedBox();
+              }
+            },
           ),
-          InkWell(
-            onTap: () async {
+          ProfileWidgetListTile(
+            icon: IconlyBold.logout,
+            title: "LogOut",
+            subtitle: "logout your account",
+            ontap: () {
               SessionController().logout().then((value) {
                 if (SessionController().isLogin == false) {
                   Navigator.pushNamedAndRemoveUntil(
@@ -57,11 +66,6 @@ class _ProfileViewState extends State<ProfileView> {
                 }
               });
             },
-            child: const ProfileWidgetListTile(
-              icon: IconlyBold.profile,
-              title: "title",
-              subtitle: "subtitle",
-            ),
           ),
         ],
       ),

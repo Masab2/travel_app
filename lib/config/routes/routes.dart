@@ -25,7 +25,8 @@ class Routes {
         );
       case RoutesNames.onBoardScreen:
         return MaterialPageRoute(
-          builder: (_) => const OnBoardScreen(),
+          builder: (_) => const OnBoardScreen(
+          ),
         );
       case RoutesNames.travelDetailsScreen:
         return MaterialPageRoute(
