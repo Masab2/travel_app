@@ -25,8 +25,7 @@ class Routes {
         );
       case RoutesNames.onBoardScreen:
         return MaterialPageRoute(
-          builder: (_) => const OnBoardScreen(
-          ),
+          builder: (_) => const OnBoardScreen(),
         );
       case RoutesNames.travelDetailsScreen:
         return MaterialPageRoute(
@@ -37,6 +36,10 @@ class Routes {
       case RoutesNames.profileScreen:
         return MaterialPageRoute(
           builder: (_) => const ProfileView(),
+        );
+      case RoutesNames.chatConsultancyScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ChatConsultancyView(),
         );
       default:
         return MaterialPageRoute(

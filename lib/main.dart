@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/Bloc/ProfileBloc/profile_bloc.dart';
@@ -17,7 +18,8 @@ import 'package:travel_app/config/Color/AppColor.dart';
 
 GetIt getIt = GetIt.instance;
 
-void main() {
+void main() async{
+  await dotenv.load(fileName: 'assets/.env');
   serviceLoacator();
   runApp(const MyApp());
 }

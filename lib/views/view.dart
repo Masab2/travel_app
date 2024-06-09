@@ -5,3 +5,4 @@ export './Home/HomeView.dart';
 export './onBoard/onBoardScreen.dart';
 export './TravelDetails/TravelDetails.dart';
 export './Profile/ProfileView.dart';
+export './Chat/chat_consultancy.dart';
