@@ -8,7 +8,7 @@ import 'package:travel_app/data/Network/NetworkApiServices.dart';
 class ChatAIHttpRepo implements ChatAIRepo {
   final _api = NetworkApiService();
   @override
-  Future<ChatAiModel> chatAIApi(data, List<ChatAiModel> previousMessage) async {
+  Future<ChatAiModel> chatAIApi(List<ChatAiModel> previousMessage) async {
     Map<String, dynamic> data = {
       "contents": previousMessage.map((e) => e.toJson()).toList(),
       "generationConfig": {
@@ -17,8 +17,16 @@ class ChatAIHttpRepo implements ChatAIRepo {
       }
     };
     var response = await _api.getPostApiResponse(AppUrl.chatUrl, data);
-    ChatAiModel model = ChatAiModel.fromJson(response);
-    log(model.parts?.first.text ?? "");
-    return model;
+    
+    final List<dynamic> candidates = response['candidates'];
+    final content = candidates[0]['content'];
+    final parts = (content['parts'] as List<dynamic>)
+        .map((part) => ChatPart.fromJson(part))
+        .toList();
+     log(response.toString()); 
+    return ChatAiModel(
+      role: 'model',
+      parts: parts,
+    );
   }
 }

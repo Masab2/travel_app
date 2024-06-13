@@ -7,6 +7,8 @@ import 'package:travel_app/Bloc/ProfileBloc/profile_bloc.dart';
 import 'package:travel_app/Bloc/TravelPlacesBloc/travel_places_bloc.dart';
 import 'package:travel_app/Repository/Auth/loginRepo.dart';
 import 'package:travel_app/Repository/Auth/login_http_repo.dart';
+import 'package:travel_app/Repository/ChatAIRepo/chat_ai_http_repo.dart';
+import 'package:travel_app/Repository/ChatAIRepo/chat_ai_repo.dart';
 import 'package:travel_app/Repository/ProfileRepo/profile_http_repo.dart';
 import 'package:travel_app/Repository/ProfileRepo/profile_repo.dart';
 import 'package:travel_app/Repository/TravelPlaces/travel_places_http_repo.dart';
@@ -18,7 +20,7 @@ import 'package:travel_app/config/Color/AppColor.dart';
 
 GetIt getIt = GetIt.instance;
 
-void main() async{
+void main() async {
   await dotenv.load(fileName: 'assets/.env');
   serviceLoacator();
   runApp(const MyApp());
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
           create: (context) => ProfileBloc(
             profileRepo: getIt(),
           ),
-        )
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -93,4 +95,5 @@ void serviceLoacator() {
   getIt.registerLazySingleton<LoginRepo>(() => LoginHttpRepo());
   getIt.registerLazySingleton<TravelPlacesRepo>(() => TravelPlacesHttpRepo());
   getIt.registerLazySingleton<ProfileRepo>(() => ProfileHttpRepo());
+  getIt.registerLazySingleton<ChatAIRepo>(() => ChatAIHttpRepo());
 }

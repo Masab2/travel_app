@@ -1,10 +1,13 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 import 'package:travel_app/Bloc/TravelPlacesBloc/travel_places_bloc.dart';
+import 'package:travel_app/config/Color/AppColor.dart';
 import 'package:travel_app/config/components/Error/ErrorWidget.dart';
 import 'package:travel_app/config/components/loadingWidget/loadingWidget.dart';
 import 'package:travel_app/config/extenshion.dart';
+import 'package:travel_app/config/routes/routesnames.dart';
 import '../../config/widgets/widgets.dart';
 
 class HomeView extends StatefulWidget {
@@ -69,7 +72,16 @@ class _HomeViewState extends State<HomeView> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColor.primaryColor,
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            RoutesNames.chatConsultancyScreen,
+          );
+        },
+        child: const Icon(IconlyLight.chat),
+      ),
     );
   }
-  
 }

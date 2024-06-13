@@ -71,10 +71,7 @@ class HomeBestDeastinationWidget extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  RoutesNames.chatConsultancyScreen,
-                                );
+                                
                               },
                               icon: const Icon(
                                 IconlyLight.chat,
