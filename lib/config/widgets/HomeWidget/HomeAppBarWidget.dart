@@ -39,13 +39,7 @@ class HomeAppbar {
           onTap: () {
             Navigator.pushNamed(context, RoutesNames.profileScreen);
           },
-          child: Container(
-              padding: EdgeInsets.all(context.mw * 0.007),
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColor.blackColor),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(IconlyBold.profile)),
+          child: const Icon(IconlyLight.notification),
         ),
         0.02.pw(context),
       ],

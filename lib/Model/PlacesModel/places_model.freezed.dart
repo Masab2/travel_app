@@ -236,6 +236,8 @@ mixin _$PlacesDataList {
   String get pricePerPerson => throw _privateConstructorUsedError;
   @JsonKey(name: 'currency')
   String get currency => throw _privateConstructorUsedError;
+  @JsonKey(name: 'category')
+  String get category => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -257,7 +259,8 @@ abstract class $PlacesDataListCopyWith<$Res> {
       @JsonKey(name: 'country') String country,
       @JsonKey(name: 'city') String city,
       @JsonKey(name: 'pricePerPerson') String pricePerPerson,
-      @JsonKey(name: 'currency') String currency});
+      @JsonKey(name: 'currency') String currency,
+      @JsonKey(name: 'category') String category});
 }
 
 /// @nodoc
@@ -281,6 +284,7 @@ class _$PlacesDataListCopyWithImpl<$Res, $Val extends PlacesDataList>
     Object? city = null,
     Object? pricePerPerson = null,
     Object? currency = null,
+    Object? category = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -315,6 +319,10 @@ class _$PlacesDataListCopyWithImpl<$Res, $Val extends PlacesDataList>
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -335,7 +343,8 @@ abstract class _$$PlacesDataListImplCopyWith<$Res>
       @JsonKey(name: 'country') String country,
       @JsonKey(name: 'city') String city,
       @JsonKey(name: 'pricePerPerson') String pricePerPerson,
-      @JsonKey(name: 'currency') String currency});
+      @JsonKey(name: 'currency') String currency,
+      @JsonKey(name: 'category') String category});
 }
 
 /// @nodoc
@@ -357,6 +366,7 @@ class __$$PlacesDataListImplCopyWithImpl<$Res>
     Object? city = null,
     Object? pricePerPerson = null,
     Object? currency = null,
+    Object? category = null,
   }) {
     return _then(_$PlacesDataListImpl(
       id: null == id
@@ -391,6 +401,10 @@ class __$$PlacesDataListImplCopyWithImpl<$Res>
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -406,7 +420,8 @@ class _$PlacesDataListImpl implements _PlacesDataList {
       @JsonKey(name: 'country') this.country = '',
       @JsonKey(name: 'city') this.city = '',
       @JsonKey(name: 'pricePerPerson') this.pricePerPerson = '',
-      @JsonKey(name: 'currency') this.currency = ''});
+      @JsonKey(name: 'currency') this.currency = '',
+      @JsonKey(name: 'category') this.category = ''});
 
   factory _$PlacesDataListImpl.fromJson(Map<String, dynamic> json) =>
       _$$PlacesDataListImplFromJson(json);
@@ -435,10 +450,13 @@ class _$PlacesDataListImpl implements _PlacesDataList {
   @override
   @JsonKey(name: 'currency')
   final String currency;
+  @override
+  @JsonKey(name: 'category')
+  final String category;
 
   @override
   String toString() {
-    return 'PlacesDataList(id: $id, title: $title, description: $description, image: $image, country: $country, city: $city, pricePerPerson: $pricePerPerson, currency: $currency)';
+    return 'PlacesDataList(id: $id, title: $title, description: $description, image: $image, country: $country, city: $city, pricePerPerson: $pricePerPerson, currency: $currency, category: $category)';
   }
 
   @override
@@ -456,13 +474,15 @@ class _$PlacesDataListImpl implements _PlacesDataList {
             (identical(other.pricePerPerson, pricePerPerson) ||
                 other.pricePerPerson == pricePerPerson) &&
             (identical(other.currency, currency) ||
-                other.currency == currency));
+                other.currency == currency) &&
+            (identical(other.category, category) ||
+                other.category == category));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, title, description, image,
-      country, city, pricePerPerson, currency);
+      country, city, pricePerPerson, currency, category);
 
   @JsonKey(ignore: true)
   @override
@@ -488,7 +508,8 @@ abstract class _PlacesDataList implements PlacesDataList {
       @JsonKey(name: 'country') final String country,
       @JsonKey(name: 'city') final String city,
       @JsonKey(name: 'pricePerPerson') final String pricePerPerson,
-      @JsonKey(name: 'currency') final String currency}) = _$PlacesDataListImpl;
+      @JsonKey(name: 'currency') final String currency,
+      @JsonKey(name: 'category') final String category}) = _$PlacesDataListImpl;
 
   factory _PlacesDataList.fromJson(Map<String, dynamic> json) =
       _$PlacesDataListImpl.fromJson;
@@ -517,6 +538,9 @@ abstract class _PlacesDataList implements PlacesDataList {
   @override
   @JsonKey(name: 'currency')
   String get currency;
+  @override
+  @JsonKey(name: 'category')
+  String get category;
   @override
   @JsonKey(ignore: true)
   _$$PlacesDataListImplCopyWith<_$PlacesDataListImpl> get copyWith =>

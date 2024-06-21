@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/config/AppUrl/AppUrl.dart';
 import 'package:travel_app/config/extenshion.dart';
 import 'package:travel_app/config/routes/routesnames.dart';
-import 'package:iconly/iconly.dart';
 
 class HomeBestDeastinationWidget extends StatelessWidget {
   final state;
@@ -46,7 +45,9 @@ class HomeBestDeastinationWidget extends StatelessWidget {
                         0.02.pw(context),
                         Text(
                           placesdata?.title ?? '',
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -56,27 +57,15 @@ class HomeBestDeastinationWidget extends StatelessWidget {
                         Row(
                           children: [
                             0.01.pw(context),
-                            const Icon(
+                            Icon(
                               Icons.location_on_outlined,
+                              size: context.mh * 0.016,
                             ),
                             0.01.pw(context),
                             Text(
                               placesdata?.country ?? '',
-                              style: Theme.of(context).textTheme.bodyMedium,
+                              style: Theme.of(context).textTheme.bodySmall
                             ),
-                          ],
-                        ),
-                        0.06.pw(context),
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                
-                              },
-                              icon: const Icon(
-                                IconlyLight.chat,
-                              ),
-                            )
                           ],
                         ),
                       ],

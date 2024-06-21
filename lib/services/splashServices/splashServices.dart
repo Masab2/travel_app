@@ -9,7 +9,7 @@ class SplashServices {
     SessionController().getUserFromPrefrences().then((value) {
       if (SessionController().isLogin == true) {
         Timer(const Duration(seconds: 4), () {
-        Navigator.pushReplacementNamed(context, RoutesNames.homeScreen);
+        Navigator.pushReplacementNamed(context, RoutesNames.bottomNavBarScreen);
       });
       } else {
         Timer(const Duration(seconds: 4), () {

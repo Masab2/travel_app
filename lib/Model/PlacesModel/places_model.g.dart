@@ -32,6 +32,7 @@ _$PlacesDataListImpl _$$PlacesDataListImplFromJson(Map<String, dynamic> json) =>
       city: json['city'] as String? ?? '',
       pricePerPerson: json['pricePerPerson'] as String? ?? '',
       currency: json['currency'] as String? ?? '',
+      category: json['category'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$PlacesDataListImplToJson(
@@ -45,4 +46,5 @@ Map<String, dynamic> _$$PlacesDataListImplToJson(
       'city': instance.city,
       'pricePerPerson': instance.pricePerPerson,
       'currency': instance.currency,
+      'category': instance.category,
     };

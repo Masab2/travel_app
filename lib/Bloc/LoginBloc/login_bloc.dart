@@ -40,7 +40,7 @@ class LoginBloc extends Bloc<LoginEvents, LoginState> {
       final value = await loginRepo.loginApi(data);
       if (value.status == true) {
         log('Login successful');
-        await SessionController().saveUserInPrefrences(value);
+        await SessionController().saveUserInPrefrences(value, value.data?.id ?? "");
         await SessionController().getUserFromPrefrences();
 
         emit(state.copyWith(

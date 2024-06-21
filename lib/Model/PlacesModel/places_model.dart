@@ -28,6 +28,7 @@ class PlacesDataList with _$PlacesDataList {
     @JsonKey(name: 'city') @Default('') String city,
     @JsonKey(name: 'pricePerPerson') @Default('') String pricePerPerson,
     @JsonKey(name: 'currency') @Default('') String currency,
+    @JsonKey(name: 'category') @Default('') String category,
   }) = _PlacesDataList;
 
   factory PlacesDataList.fromJson(Map<String, dynamic> json) =>

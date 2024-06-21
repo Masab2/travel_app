@@ -74,7 +74,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                           );
                         } else {
                           Navigator.pushReplacementNamed(
-                              context, RoutesNames.homeScreen);
+                              context, RoutesNames.bottomNavBarScreen);
                         }
                       },
                     ),

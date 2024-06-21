@@ -1,13 +1,10 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iconly/iconly.dart';
 import 'package:travel_app/Bloc/TravelPlacesBloc/travel_places_bloc.dart';
-import 'package:travel_app/config/Color/AppColor.dart';
 import 'package:travel_app/config/components/Error/ErrorWidget.dart';
 import 'package:travel_app/config/components/loadingWidget/loadingWidget.dart';
 import 'package:travel_app/config/extenshion.dart';
-import 'package:travel_app/config/routes/routesnames.dart';
 import '../../config/widgets/widgets.dart';
 
 class HomeView extends StatefulWidget {
@@ -41,9 +38,10 @@ class _HomeViewState extends State<HomeView> {
               title: 'Best Destinations',
               view: 'View All',
             ),
-            0.02.ph(context),
-            SizedBox(
-              height: context.mh * 0.52,
+            0.01.ph(context),
+            Container(
+              // color: Colors.red,
+              height: context.mh * 0.48,
               child: BlocBuilder<TravelPlacesBloc, TravelPlacesState>(
                 builder: (BuildContext context, TravelPlacesState state) {
                   if (state is TravelPlacesLoading) {
@@ -54,7 +52,9 @@ class _HomeViewState extends State<HomeView> {
                     );
                   } else if (state is TravelPlacesError) {
                     return ErrorWidgetComp(
-                      onPress: () {},
+                      onPress: () {
+                        context.read<TravelPlacesBloc>().add(TravePlacesLoadedEvent());
+                      },
                       errorText: state.message.toString(),
                     );
                   } else {
@@ -63,8 +63,9 @@ class _HomeViewState extends State<HomeView> {
                 },
               ),
             ),
+            0.02.ph(context),
             const HomeSubtitleBarWidget(
-              title: 'Popular Places',
+              title: 'Popular Categories',
               view: 'View All',
             ),
             0.01.ph(context),
@@ -72,16 +73,7 @@ class _HomeViewState extends State<HomeView> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColor.primaryColor,
-        onPressed: () {
-          Navigator.pushNamed(
-            context,
-            RoutesNames.chatConsultancyScreen,
-          );
-        },
-        child: const Icon(IconlyLight.chat),
-      ),
+      
     );
   }
 }

@@ -18,3 +18,8 @@ export './TravelDetailsWidget/travel_image_widget.dart';
 export './ProfileWidget/profile_widget_listTile.dart';
 export './ProfileWidget/profile_widget_state_completed.dart';
 export './ProfileWidget/profile_widget_main_icon.dart';
+
+export './FavouriteWidgets/favourite_places_widget.dart';
+export './FavouriteWidgets/favourite_title_widget.dart';
+
+export './categoryWidget/category_completed_widget.dart';

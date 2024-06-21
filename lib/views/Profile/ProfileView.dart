@@ -47,7 +47,9 @@ class _ProfileViewState extends State<ProfileView> {
               } else if (state is ProfileErrorState) {
                 return ErrorWidgetComp(
                   errorText: state.message,
-                  onPress: () {},
+                  onPress: () {
+                    context.read<ProfileBloc>().add(ProfileLoadedEvent());
+                  },
                 );
               } else {
                 return const SizedBox();

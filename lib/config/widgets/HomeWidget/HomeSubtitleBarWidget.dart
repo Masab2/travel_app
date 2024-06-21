@@ -5,7 +5,8 @@ import 'package:travel_app/config/extenshion.dart';
 class HomeSubtitleBarWidget extends StatelessWidget {
   final String title;
   final String view;
-  const HomeSubtitleBarWidget({super.key, required this.title, required this.view});
+  const HomeSubtitleBarWidget(
+      {super.key, required this.title, required this.view});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class HomeSubtitleBarWidget extends StatelessWidget {
             title,
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   fontWeight: FontWeight.bold,
-                  fontSize: context.mh * 0.023,
+                  fontSize: context.mh * 0.017,
                 ),
           ),
           Text(

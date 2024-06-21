@@ -21,11 +21,11 @@ class SessionController {
   }
 
   // save user in preferences
-  Future<void> saveUserInPrefrences(dynamic user) async {
+  Future<void> saveUserInPrefrences(dynamic user, userId) async {
     await localStorage.setValue('isLogin', 'true');
     await localStorage.setValue('token', jsonEncode(user));
+    await localStorage.setValue('id', userId);
     log(userModel.data?.id.toString() ?? "");
-    await localStorage.setValue('id', userModel.data?.id.toString() ?? "");
   }
 
   // get user from preferences

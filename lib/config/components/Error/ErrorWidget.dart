@@ -12,7 +12,7 @@ class ErrorWidgetComp extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          0.15.ph(context),
+          0.020.ph(context),
           const Icon(
             Icons.error,
             color: Colors.red,
@@ -27,11 +27,11 @@ class ErrorWidgetComp extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .displayMedium!
-                    .copyWith(fontSize: 20),
+                    .copyWith(fontSize: context.mh * 0.018),
               ),
             ),
           ),
-          0.15.ph(context),
+          0.015.ph(context),
           ElevatedButton(
             onPressed: onPress,
             child: Center(

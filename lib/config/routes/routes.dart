@@ -11,6 +11,10 @@ class Routes {
         return MaterialPageRoute(
           builder: (_) => const SplashView(),
         );
+      case RoutesNames.bottomNavBarScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CustomizedBottomNavBar(),
+        );
       case RoutesNames.loginScreen:
         return MaterialPageRoute(
           builder: (_) => const LoginView(),
@@ -40,6 +44,16 @@ class Routes {
       case RoutesNames.chatConsultancyScreen:
         return MaterialPageRoute(
           builder: (_) => const ChatConsultancyView(),
+        );
+      case RoutesNames.favScreen:
+        return MaterialPageRoute(
+          builder: (_) => const FavouriteView(),
+        );
+      case RoutesNames.categoryScreen:
+        return MaterialPageRoute(
+          builder: (_) => CategoryView(
+            category: args as String,
+          ),
         );
       default:
         return MaterialPageRoute(
