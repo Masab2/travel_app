@@ -3,8 +3,8 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppUrl {
-  static String devUrl = "http://192.168.0.108:8000";
-  static String? baseUrl = dotenv.env['BASE_URL'];
+  // static String? baseUrl = "http://192.168.0.108:8000";
+  static String? devUrl =   dotenv.env['BASE_URL'];               
   static String loginUrl = "$devUrl/api/login";
   // get the Profile Url
   static String getProfileUrl(String userId) =>

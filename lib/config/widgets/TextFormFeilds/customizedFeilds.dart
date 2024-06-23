@@ -42,6 +42,7 @@ class CustomizedFeilds extends StatelessWidget {
           border: InputBorder.none,
           icon: Icon(icon),
           suffixIcon: suffixIcon,
+          
         ),
         validator: validator,
         onFieldSubmitted: onFeildSubmitted,

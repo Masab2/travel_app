@@ -3,6 +3,14 @@ export './LoginWidget/LoginEmailInputWidget/login_email_input_widget.dart';
 export './LoginWidget/LoginPasswordInputWidget/login_password_input_widget.dart';
 export './LoginWidget/LoginBtn/Login_btn_widget.dart';
 
+export 'RegisterWidget/InputWidgets/register_lastname_input_widget.dart';
+export './RegisterWidget/InputWidgets/register_email_input_widget.dart';
+export './RegisterWidget/InputWidgets/register_city_input_widget.dart';
+export './RegisterWidget/InputWidgets/register_country_input_widget.dart';
+export './RegisterWidget/InputWidgets/register_phone_input_widget.dart';
+export './RegisterWidget/InputWidgets/register_password_input_widget.dart';
+export './RegisterWidget/InputWidgets/register_name_input_widget.dart';
+
 export './HomeWidget/HomeBestDeastinationWidget.dart';
 export './HomeWidget/HomeTitleWidget.dart';
 export './HomeWidget/HomeAppBarWidget.dart';
@@ -15,9 +23,11 @@ export './TravelDetailsWidget/travel_title_widget.dart';
 export './TravelDetailsWidget/travel_description_widget.dart';
 export './TravelDetailsWidget/travel_image_widget.dart';
 
-export './ProfileWidget/profile_widget_listTile.dart';
 export './ProfileWidget/profile_widget_state_completed.dart';
 export './ProfileWidget/profile_widget_main_icon.dart';
+export './ProfileWidget/profile_main_page_widget.dart';
+export './ProfileWidget/profile_widget_trip_count.dart';
+export './ProfileWidget/profile_widget_list_Items_widget.dart';
 
 export './FavouriteWidgets/favourite_places_widget.dart';
 export './FavouriteWidgets/favourite_title_widget.dart';

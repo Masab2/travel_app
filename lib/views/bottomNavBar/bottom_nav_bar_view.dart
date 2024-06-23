@@ -51,9 +51,9 @@ class _CustomizedBottomNavBarState extends State<CustomizedBottomNavBar> {
               children: const [
                 HomeView(),
                 FavouriteView(),
-                HomeView(),
+                BookingView(),
                 ChatConsultancyView(),
-                HomeView(),
+                ProfileView()
               ],
             );
           },
@@ -90,7 +90,6 @@ class _MainWrapperBottomNavBar extends StatelessWidget {
         final currentPage = (state as BottomNavBarInitial).page;
         return BottomAppBar(
           color: AppColor.secondaryColorWhite,
-          elevation: 10,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -11,17 +11,17 @@ class ProfileWidgetStateCompleted extends StatelessWidget {
     return Column(
       children: [
         ProfileWidgetListTile(
-          icon: IconlyBold.profile,
+          icon: IconlyLight.profile,
           title: "Name",
           subtitle: state.model.data?.name ?? "",
         ),
         ProfileWidgetListTile(
-          icon: IconlyBold.message,
+          icon: IconlyLight.message,
           title: "Email",
           subtitle: state.model.data?.email ?? "",
         ),
         ProfileWidgetListTile(
-          icon: IconlyBold.call,
+          icon: IconlyLight.call,
           title: "Phone",
           subtitle: state.model.data?.phone ?? "",
         ),

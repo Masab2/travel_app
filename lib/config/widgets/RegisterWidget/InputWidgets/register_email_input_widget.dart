@@ -1,29 +1,26 @@
-
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_app/Bloc/LoginBloc/login_bloc.dart';
-import 'package:travel_app/config/widgets/widgets.dart';
+import 'package:iconly/iconly.dart';
+import 'package:travel_app/Bloc/RegisterBloc/register_bloc.dart';
+import 'package:travel_app/config/widgets/TextFormFeilds/customizedFeilds.dart';
 
-class LoginEmailInputWidget extends StatelessWidget {
+class RegisterEmailInputWidget extends StatelessWidget {
   final TextEditingController controller;
-  const LoginEmailInputWidget({
-    super.key,
-    required this.controller,
-  });
+  const RegisterEmailInputWidget({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     final RegExp emailRegExp =
         RegExp(r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$');
-    return BlocBuilder<LoginBloc, LoginState>(
+    return BlocBuilder<RegisterBloc, RegisterState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return CustomizedFeilds(
           controller: controller,
           hintText: 'abc@gmail.com',
-          icon: Icons.email,
+          icon: IconlyLight.message,
           keyBoardtype: TextInputType.emailAddress,
           validator: (value) {
             if (value!.isEmpty) {
@@ -35,9 +32,7 @@ class LoginEmailInputWidget extends StatelessWidget {
           },
           onChanged: (value) {
             log(value);
-            context.read<LoginBloc>().add(
-                  LoginEmailChanged(email: value),
-                );
+
             return null;
           },
         );

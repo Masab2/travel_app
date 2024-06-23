@@ -31,7 +31,6 @@ class _LoginViewState extends State<LoginView> {
     emailcontroller.dispose();
     passwordcontroller.dispose();
     _obscurepass.dispose();
-    _loginBloc.close();
     super.dispose();
   }
 
@@ -68,7 +67,7 @@ class _LoginViewState extends State<LoginView> {
                   child: Column(
                     children: [
                       0.03.ph(context),
-                      EmailInputWidget(controller: emailcontroller),
+                      LoginEmailInputWidget(controller: emailcontroller),
                       0.03.ph(context),
                       ValueListenableBuilder(
                         valueListenable: _obscurepass,

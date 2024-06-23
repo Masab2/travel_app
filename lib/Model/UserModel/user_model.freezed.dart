@@ -256,6 +256,12 @@ mixin _$UserDataList {
   String get email => throw _privateConstructorUsedError;
   @JsonKey(name: 'phone')
   String get phone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'city')
+  String get city => throw _privateConstructorUsedError;
+  @JsonKey(name: 'country')
+  String get country => throw _privateConstructorUsedError;
+  @JsonKey(name: 'address')
+  String get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'createdAt')
   String get createdDate => throw _privateConstructorUsedError;
 
@@ -276,6 +282,9 @@ abstract class $UserDataListCopyWith<$Res> {
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'email') String email,
       @JsonKey(name: 'phone') String phone,
+      @JsonKey(name: 'city') String city,
+      @JsonKey(name: 'country') String country,
+      @JsonKey(name: 'address') String address,
       @JsonKey(name: 'createdAt') String createdDate});
 }
 
@@ -296,6 +305,9 @@ class _$UserDataListCopyWithImpl<$Res, $Val extends UserDataList>
     Object? name = null,
     Object? email = null,
     Object? phone = null,
+    Object? city = null,
+    Object? country = null,
+    Object? address = null,
     Object? createdDate = null,
   }) {
     return _then(_value.copyWith(
@@ -314,6 +326,18 @@ class _$UserDataListCopyWithImpl<$Res, $Val extends UserDataList>
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
       createdDate: null == createdDate
           ? _value.createdDate
@@ -336,6 +360,9 @@ abstract class _$$UserDataListImplCopyWith<$Res>
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'email') String email,
       @JsonKey(name: 'phone') String phone,
+      @JsonKey(name: 'city') String city,
+      @JsonKey(name: 'country') String country,
+      @JsonKey(name: 'address') String address,
       @JsonKey(name: 'createdAt') String createdDate});
 }
 
@@ -354,6 +381,9 @@ class __$$UserDataListImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? phone = null,
+    Object? city = null,
+    Object? country = null,
+    Object? address = null,
     Object? createdDate = null,
   }) {
     return _then(_$UserDataListImpl(
@@ -373,6 +403,18 @@ class __$$UserDataListImplCopyWithImpl<$Res>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
       createdDate: null == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -389,6 +431,9 @@ class _$UserDataListImpl implements _UserDataList {
       @JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'email') this.email = '',
       @JsonKey(name: 'phone') this.phone = '',
+      @JsonKey(name: 'city') this.city = '',
+      @JsonKey(name: 'country') this.country = '',
+      @JsonKey(name: 'address') this.address = '',
       @JsonKey(name: 'createdAt') this.createdDate = ''});
 
   factory _$UserDataListImpl.fromJson(Map<String, dynamic> json) =>
@@ -407,12 +452,21 @@ class _$UserDataListImpl implements _UserDataList {
   @JsonKey(name: 'phone')
   final String phone;
   @override
+  @JsonKey(name: 'city')
+  final String city;
+  @override
+  @JsonKey(name: 'country')
+  final String country;
+  @override
+  @JsonKey(name: 'address')
+  final String address;
+  @override
   @JsonKey(name: 'createdAt')
   final String createdDate;
 
   @override
   String toString() {
-    return 'UserDataList(id: $id, name: $name, email: $email, phone: $phone, createdDate: $createdDate)';
+    return 'UserDataList(id: $id, name: $name, email: $email, phone: $phone, city: $city, country: $country, address: $address, createdDate: $createdDate)';
   }
 
   @override
@@ -424,14 +478,17 @@ class _$UserDataListImpl implements _UserDataList {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.address, address) || other.address == address) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, email, phone, createdDate);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, email, phone, city, country, address, createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -453,6 +510,9 @@ abstract class _UserDataList implements UserDataList {
           @JsonKey(name: 'name') final String name,
           @JsonKey(name: 'email') final String email,
           @JsonKey(name: 'phone') final String phone,
+          @JsonKey(name: 'city') final String city,
+          @JsonKey(name: 'country') final String country,
+          @JsonKey(name: 'address') final String address,
           @JsonKey(name: 'createdAt') final String createdDate}) =
       _$UserDataListImpl;
 
@@ -471,6 +531,15 @@ abstract class _UserDataList implements UserDataList {
   @override
   @JsonKey(name: 'phone')
   String get phone;
+  @override
+  @JsonKey(name: 'city')
+  String get city;
+  @override
+  @JsonKey(name: 'country')
+  String get country;
+  @override
+  @JsonKey(name: 'address')
+  String get address;
   @override
   @JsonKey(name: 'createdAt')
   String get createdDate;

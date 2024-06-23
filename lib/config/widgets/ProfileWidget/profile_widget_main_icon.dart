@@ -4,24 +4,33 @@ import 'package:travel_app/config/Color/AppColor.dart';
 import 'package:travel_app/config/extenshion.dart';
 
 class ProfileWidgetmainIcon extends StatelessWidget {
-  const ProfileWidgetmainIcon({super.key});
+  final String email;
+  const ProfileWidgetmainIcon({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topCenter,
-      child: Container(
-        padding: EdgeInsets.all(context.mh * 0.02),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(color: AppColor.primaryColor, width: 2.0),
+    return Column(
+      children: [
+        Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+            height: context.mh * 0.18,
+            width: context.mh * 0.18,
+            padding: EdgeInsets.all(context.mh * 0.02),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(color: AppColor.blackColor, width: 2.0),
+            ),
+            child: Icon(
+              IconlyLight.camera,
+              color: AppColor.primaryColor,
+            ),
+          ),
         ),
-        child: Icon(
-          IconlyBold.profile,
-          color: AppColor.primaryColor,
-          size: context.mh * 0.130,
-        ),
-      ),
+        0.02.ph(context),
+        Text(email,
+            style: Theme.of(context).textTheme.bodySmall),
+      ],
     );
   }
 }

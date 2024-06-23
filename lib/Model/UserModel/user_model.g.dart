@@ -30,6 +30,9 @@ _$UserDataListImpl _$$UserDataListImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       phone: json['phone'] as String? ?? '',
+      city: json['city'] as String? ?? '',
+      country: json['country'] as String? ?? '',
+      address: json['address'] as String? ?? '',
       createdDate: json['createdAt'] as String? ?? '',
     );
 
@@ -39,5 +42,8 @@ Map<String, dynamic> _$$UserDataListImplToJson(_$UserDataListImpl instance) =>
       'name': instance.name,
       'email': instance.email,
       'phone': instance.phone,
+      'city': instance.city,
+      'country': instance.country,
+      'address': instance.address,
       'createdAt': instance.createdDate,
     };
