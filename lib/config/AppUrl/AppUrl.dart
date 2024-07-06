@@ -3,7 +3,7 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppUrl {
-  // static String? baseUrl = "http://192.168.0.108:8000";
+  // static String? devUrl = "http://192.168.0.110:8000";
   static String? devUrl =   dotenv.env['BASE_URL'];               
   static String loginUrl = "$devUrl/api/login";
   // get the Profile Url
@@ -11,7 +11,7 @@ class AppUrl {
       '$devUrl/api/profile?userId=$userId';
 
   // Get All Places Url
-  static String getPlacesUrl = "$devUrl/api/getAllPlaces";
+  static String getPlacesUrl = "$devUrl/api/getBestDestinationPlaces";
 
   // For Image Url
   static String buildUrlImage(String image) {

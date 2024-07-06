@@ -11,4 +11,5 @@ class RoutesNames {
   static const String favScreen = 'favScreen';
   static const String categoryScreen = 'categoryScreen';
   static const String bookingScreen = 'bookingScreen';
+  static const String createbookingScreen = 'createbookingScreen';
 }

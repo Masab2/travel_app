@@ -8,12 +8,12 @@ abstract class RegisterEvents extends Equatable {
 
 // Name Changed Event
 class FirstNameChanged extends RegisterEvents {
-  final String name;
+  final String firstname;
 
-  const FirstNameChanged({required this.name});
+  const FirstNameChanged({required this.firstname});
 
   @override
-  List<Object?> get props => [name];
+  List<Object?> get props => [firstname];
 }
 
 // Name Unfocus Event

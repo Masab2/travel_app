@@ -33,3 +33,11 @@ export './FavouriteWidgets/favourite_places_widget.dart';
 export './FavouriteWidgets/favourite_title_widget.dart';
 
 export './categoryWidget/category_completed_widget.dart';
+
+export './CreateBookingWidget/address_input_widget.dart';
+export './CreateBookingWidget/check_in_date_widget.dart';
+export './CreateBookingWidget/check_out_date_widget.dart';
+export './CreateBookingWidget/email_input_Booking_widget.dart';
+export './CreateBookingWidget/phone_input_booking_widget.dart';
+export './CreateBookingWidget/person_count_widget.dart';
+export './CreateBookingWidget/booked_btn_widget.dart';

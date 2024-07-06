@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Model/PlacesModel/places_model.dart';
 import 'package:travel_app/config/components/RoundButton/RoundButton.dart';
 import 'package:travel_app/config/extenshion.dart';
+import 'package:travel_app/config/routes/routesnames.dart';
 import 'package:travel_app/config/widgets/widgets.dart';
 
 class TravelDetailsView extends StatefulWidget {
@@ -37,7 +38,9 @@ class _TravelDetailsViewState extends State<TravelDetailsView> {
             Expanded(
               child: RoundButton(
                 title: 'Book Now',
-                onPress: () {},
+                onPress: () {
+                  Navigator.pushNamed(context, RoutesNames.createbookingScreen);
+                },
               ),
             ),
           ],

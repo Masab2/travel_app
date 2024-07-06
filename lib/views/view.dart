@@ -10,3 +10,4 @@ export './Chat/chat_consultancy.dart';
 export './Favourite/favourite_view.dart';
 export './Category View/category_view.dart';
 export './BookingView/booking_view.dart';
+export './CreateBookings/create_booking_view.dart';

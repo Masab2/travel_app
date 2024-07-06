@@ -59,6 +59,10 @@ class Routes {
         return MaterialPageRoute(
           builder: (_) => const BookingView(),
         );
+      case RoutesNames.createbookingScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CreateBookingView(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) {
