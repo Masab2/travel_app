@@ -5,7 +5,14 @@ class BookingFeildComp extends StatelessWidget {
   final String title;
   final String hintText;
   final IconData icon;
-  const BookingFeildComp({super.key, required this.title, required this.hintText, required this.icon});
+  final TextEditingController? controller;
+  final VoidCallback? ontap;
+  const BookingFeildComp(
+      {super.key,
+      required this.title,
+      required this.hintText,
+      required this.icon,
+      this.controller, this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +34,19 @@ class BookingFeildComp extends StatelessWidget {
           ),
           Container(
             height: 50,
-            padding: const EdgeInsets.all(7),
+            padding: const EdgeInsets.all(2),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.grey[200],
             ),
             child: TextFormField(
+              controller: controller,
               decoration: InputDecoration(
                 hintText: hintText,
-                prefixIcon: Icon(icon),
+                prefixIcon: InkWell(
+                  onTap: ontap,
+                  child: Icon(icon),
+                ),
                 border: InputBorder.none,
               ),
             ),

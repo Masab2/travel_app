@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/Bloc/BookingDateBloc/booking_date_Bloc.dart';
 import 'package:travel_app/Bloc/BottomNavBarBloc/bottom_nav_bar_bloc.dart';
 import 'package:travel_app/Bloc/CategoryBloc/category_bloc.dart';
 import 'package:travel_app/Bloc/CountBloc/count_bloc.dart';
@@ -63,6 +64,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => CounterBloc(),
         ),
+        BlocProvider(
+          create: (context) => BookingDateBloc(),
+        ),
+        
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

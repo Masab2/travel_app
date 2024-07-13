@@ -3,12 +3,14 @@ import 'package:iconly/iconly.dart';
 import 'package:travel_app/config/components/BookingFeildComp/booking_feild_comp.dart';
 
 class EmailInputBookingWidget extends StatelessWidget {
-  const EmailInputBookingWidget({super.key});
+  final TextEditingController emailController;
+  const EmailInputBookingWidget({super.key, required this.emailController});
 
   @override
   Widget build(BuildContext context) {
-    return const BookingFeildComp(
-      title: 'Email  (Optional)',
+    return BookingFeildComp(
+      controller: emailController,
+      title: 'Email',
       hintText: "abc@gmail.com", icon: IconlyLight.message,
     );
   }

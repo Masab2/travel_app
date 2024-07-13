@@ -4,7 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppUrl {
   // static String? devUrl = "http://192.168.0.110:8000";
-  static String? devUrl =   dotenv.env['BASE_URL'];               
+  static String? devUrl = dotenv.env['BASE_URL'];
   static String loginUrl = "$devUrl/api/login";
   // get the Profile Url
   static String getProfileUrl(String userId) =>
@@ -24,10 +24,17 @@ class AppUrl {
   // Get Favorite Url
   static String getFavUrl(String userId) =>
       "$devUrl/api/getAllFavourites?userId=$userId";
-  
+
   // Get Places by Catgeory
   static String getCatUrl(String category) =>
       "$devUrl/api/getPlacesByCategory?category=$category";
+
+  // Create Booking Url
+  static String createBookingUrl = "$devUrl/api/bookTrip";
+
+  // Get Booking for the Specified User
+  static String getUserBooking(userId) =>
+      "$devUrl/api/getUserBookings?userId=$userId";
 
   // Gemmine Api Key
   static String? apiKey = dotenv.env['GEMMINE_API_KEY'];
