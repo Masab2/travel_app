@@ -41,3 +41,5 @@ export './CreateBookingWidget/email_input_Booking_widget.dart';
 export './CreateBookingWidget/phone_input_booking_widget.dart';
 export './CreateBookingWidget/person_count_widget.dart';
 export './CreateBookingWidget/booked_btn_widget.dart';
+
+export './ChatBotWidgets/chat_bubble_widget.dart';

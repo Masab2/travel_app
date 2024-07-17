@@ -7,12 +7,14 @@ class BookingFeildComp extends StatelessWidget {
   final IconData icon;
   final TextEditingController? controller;
   final VoidCallback? ontap;
+  final Function(String)? onChanged;
+  final String? Function(String?)? validator;
   const BookingFeildComp(
       {super.key,
       required this.title,
       required this.hintText,
       required this.icon,
-      this.controller, this.ontap});
+      this.controller, this.ontap, this.onChanged, this.validator});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class BookingFeildComp extends StatelessWidget {
             ],
           ),
           Container(
-            height: 50,
+            height: context.mh * 0.06,
             padding: const EdgeInsets.all(2),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
@@ -41,6 +43,8 @@ class BookingFeildComp extends StatelessWidget {
             ),
             child: TextFormField(
               controller: controller,
+              onChanged: onChanged,
+              validator: validator,
               decoration: InputDecoration(
                 hintText: hintText,
                 prefixIcon: InkWell(

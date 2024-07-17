@@ -7,12 +7,14 @@ import 'package:travel_app/Bloc/BookingDateBloc/booking_date_Bloc.dart';
 import 'package:travel_app/Bloc/BottomNavBarBloc/bottom_nav_bar_bloc.dart';
 import 'package:travel_app/Bloc/CategoryBloc/category_bloc.dart';
 import 'package:travel_app/Bloc/CountBloc/count_bloc.dart';
+import 'package:travel_app/Bloc/CreateBookingBloc/create_booking_bloc.dart';
 import 'package:travel_app/Bloc/FavouriteBloc/AddToFavBloc/add_to_fav_bloc.dart';
 import 'package:travel_app/Bloc/FavouriteBloc/GetFavBloc/fav_bloc.dart';
 import 'package:travel_app/Bloc/ProfileBloc/profile_bloc.dart';
 import 'package:travel_app/Bloc/TravelPlacesBloc/travel_places_bloc.dart';
 import 'package:travel_app/Repository/CategoryRepo/category_http_repo.dart';
 import 'package:travel_app/Repository/CategoryRepo/category_repo.dart';
+import 'package:travel_app/Repository/CreateBookingRepo/create_booking_repo.dart';
 import 'package:travel_app/Repository/FavouriterRepo/fav_http_repo.dart';
 import 'package:travel_app/Repository/FavouriterRepo/fav_repo.dart';
 import 'package:travel_app/Repository/Auth/loginRepo.dart';
@@ -66,6 +68,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => BookingDateBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CreateBookingBloc(repo: getIt()),
         ),
         
       ],
@@ -126,4 +131,5 @@ void serviceLoacator() {
   getIt.registerLazySingleton<ChatAIRepo>(() => ChatAIHttpRepo());
   getIt.registerLazySingleton<FavRepo>(() => FavHttpRepo());
   getIt.registerLazySingleton<CategoryRepo>(() => CategoryHttpRepo());
+  getIt.registerLazySingleton<CreateBookingRepo>(() => CreateBookingHttpRepo());
 }

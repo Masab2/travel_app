@@ -8,6 +8,7 @@ class CreateBookingHttpRepo extends CreateBookingRepo {
       AppUrl.createBookingUrl,
       data,
     );
+    log(response.toString());
     return CreateBookingModel.fromJson(response);
   }
 }

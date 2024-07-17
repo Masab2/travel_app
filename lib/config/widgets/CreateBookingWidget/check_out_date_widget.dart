@@ -32,10 +32,11 @@ class CheckOutDateWidget extends StatelessWidget {
           children: [
             BookingFeildComp(
               controller: checkOutController,
-              title: 'Check In Date',
+              title: 'Check Out Date',
               hintText: 'dd/mm/yyyy',
               icon: IconlyLight.calendar,
               ontap: () => _selectDate(context),
+              
             ),
             if (state.errorMessage != null)
               Row(

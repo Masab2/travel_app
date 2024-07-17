@@ -7,6 +7,10 @@ class CreateBookingState extends Equatable {
   final String phone;
   final CreateBookingModel? bookingResponse;
   final String? error;
+  final Status status;
+  final String placeId;
+  final String checkInDate;
+  final String checkoutDate;
 
   const CreateBookingState({
     this.person = '',
@@ -15,6 +19,10 @@ class CreateBookingState extends Equatable {
     this.phone = '',
     this.bookingResponse,
     this.error,
+    this.status = Status.notStarted,
+    this.placeId = '',
+    this.checkInDate = '',
+    this.checkoutDate = '',
   });
 
   CreateBookingState copyWith({
@@ -24,6 +32,10 @@ class CreateBookingState extends Equatable {
     String? phone,
     CreateBookingModel? bookingResponse,
     String? error,
+    Status? status,
+    String? placeId,
+    String? checkInDate,
+    String? checkoutDate,
   }) {
     return CreateBookingState(
       email: email ?? this.email,
@@ -32,9 +44,14 @@ class CreateBookingState extends Equatable {
       phone: phone ?? this.phone,
       bookingResponse: bookingResponse ?? this.bookingResponse,
       error: error ?? this.error,
+      status: status ?? this.status,
+      placeId: placeId ?? this.placeId,
+      checkInDate: checkInDate ?? this.checkInDate,
+      checkoutDate: checkoutDate ?? this.checkoutDate
+
     );
   }
 
   @override
-  List<Object?> get props => [person, email, address, phone];
+  List<Object?> get props => [person, email, address, phone, status, placeId];
 }
